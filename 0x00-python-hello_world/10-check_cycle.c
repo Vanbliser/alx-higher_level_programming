@@ -9,16 +9,37 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *temp;
-	listint_t *first_node;
+	listint_t *temp, **current_addr, **next_addr, **tmp;
+	unsigned int i = 1, j;
 
-	first_node = list;
 	temp = list;
+	if (temp == NULL)
+		return (0);
+	current_addr = malloc(sizeof(char *) * (i + 1));
+	*(current_addr + i) = NULL;
+	*(current_addr + (i - 1)) = temp;
+	temp = temp->next;
 	while (temp != NULL)
 	{
+		j = 0;
+		while (*(current_addr + j))
+		{
+			if (*(current_addr + j) == temp)
+				return (1);
+			j++;
+		}
+		++i;
+		next_addr = malloc(sizeof(char *) * (i + 1));
+		*(next_addr + i) = NULL;
+		*(next_addr + (i - 1)) = temp;
+		for (j = 0; *(current_addr + j); ++j)
+			*(next_addr + j) = *(current_addr + j);
+		tmp = current_addr;
+		current_addr = next_addr;
 		temp = temp->next;
-		if (temp == first_node)
-			return (1);
+		free(tmp);
 	}
+	free(current_addr);
+	free(list);
 	return (0);
 }
