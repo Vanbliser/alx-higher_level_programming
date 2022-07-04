@@ -9,21 +9,15 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *temp, *loop;
-	unsigned int i = 0, j;
+	listint_t *step2;
 
-	temp = list;
-	while (temp != NULL && temp->next != NULL)
+	step2 = list;
+	while (list && step2 && step2->next)
 	{
-		loop = list;
-		for (j = 0; j < i; ++j)
-		{
-			if (temp == loop)
-				return (1);
-			loop = loop->next;
-		}
-		temp = temp->next;
-		++i;
+		list = list->next;
+		step2 = step2->next->next;
+		if (list == step2)
+			return (1);
 	}
 	return (0);
 }

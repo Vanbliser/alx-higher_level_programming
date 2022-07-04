@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 #include "lists.h"
+#include <time.h>
 
 /**
  * main - check the code for Holberton School students.
@@ -11,37 +12,28 @@
 int main(void)
 {
 	listint_t *head;
-	listint_t *current;
-	listint_t *temp;
-	listint_t *reset;
+	clock_t start;
+	clock_t end;
+	clock_t diff;
 	int i;
 
 	head = NULL;
-	for (i = 0; i < 101; i++)
+	for (i = 0; i < 1001; i++)
 		add_nodeint(&head, i);
 
-	print_listint(head);
+	start = clock();
 
-	current = head;
-	for (i = 0; i < 26; i++)
-		current = current->next;
-	temp = current;
+	for (i = 0; i < 10; i++)
+	        check_cycle(head);
 
-	current = head;
-	for (i = 0; i < 76; i++)
-		current = current->next;
-	reset = current->next;
-	current->next = temp;
+	end = clock();
 
-	if (check_cycle(head) == 0)
-		printf("Linked list has no cycle\n");
-	else if (check_cycle(head) == 1)
-		printf("Linked list has a cycle\n");
+	diff = (double)(end - start) / 10;
 
-	current = head;
-	for (i = 0; i < 76; i++)
-		current = current->next;
-	current->next = reset;
+	if (diff > 40)
+		printf("Runtime too long=%lu\n", diff);
+	else
+		printf("OK=%lu\n", diff);
 
 	free_listint(head);
 
@@ -57,25 +49,22 @@ int main(void)
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *temp, *loop;
-	unsigned int i = 0, j;
+	listint_t *step2;
+	unsigned int i = 0;
 
-	temp = list;
-	while (temp != NULL && temp->next != NULL)
+	step2 = list;
+	while (list && step2 && step2->next)
 	{
-		loop = list;
-		for (j = 0; j < i; ++j)
+		list = list->next;
+		step2 = step2->next->next;
+		i++;
+		if (list == step2)
 		{
-			if (temp == loop)
-				return (1);
-			loop = loop->next;
+			return (1);
 		}
-		temp = temp->next;
-		++i;
 	}
 	return (0);
 }
-
 /**
  * print_listint - prints all elements of a listint_t list
  * @h: pointer to head of list of type listint_t
