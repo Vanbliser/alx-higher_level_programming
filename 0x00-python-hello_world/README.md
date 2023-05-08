@@ -14,17 +14,18 @@
 * 10-check_cycle.c, lists.h: Write a function in C that checks if a singly linked list has a cycle in it.
 
 #### This project contains the following advance tasks:
-* 100-write.py: Write a Python script that prints exactly <span style="color:red;">and that piece of art is useful - Dora Korpar, 2015-10-19, </span> followed by a new line.
+* 100-write.py: Write a Python script that prints exactly ( and that piece of art is useful - Dora Korpar, 2015-10-19 ) followed by a new line.
 * 101-compile:Write a script that compiles a Python script file. The Python file name will be stored in the environment variable $PYFILE.
 * 102-magic_calculation.py: Write the Python function def magic_calculation(a, b): that does exactly the same as the following Python bytecode:
-<div style="margin:auto; width:50%;">
-```
- 3            0 LOAD_CONST               1 (98)
-              3 LOAD_FAST                0 (a)
-              6 LOAD_FAST                1 (b)
-              9 BINARY_POWER
-             10 BINARY_ADD
-             11 RETURN_VALUE
-```
-</div>
+
+<pre>
+    ```
+     3            0 LOAD_CONST               1 (98)
+                  3 LOAD_FAST                0 (a)
+                  6 LOAD_FAST                1 (b)
+                  9 BINARY_POWER
+                 10 BINARY_ADD
+                 11 RETURN_VALUE
+    ```
+</pre>
 
