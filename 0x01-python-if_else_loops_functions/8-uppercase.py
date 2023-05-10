@@ -7,5 +7,5 @@ def uppercase(str):
         char_int = ord(c)
         if (char_int >= 97 and char_int <= 122):
             char_int -= 32
-        print("{:c}".format(char_int), end="")
+        print("{:s}".format(char_int), end="")
     print("".format())
