@@ -79,7 +79,7 @@ class Square:
                 string += "\n"
             for col in range(self.size):
                 i = ' '*(self.position[0])
-                j = '#'*(self.__size) 
+                j = '#'*(self.__size)
                 if col < ((self.size) - 1):
                     string += f"{i}{j}\n"
                 else:
