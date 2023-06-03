@@ -74,7 +74,7 @@ class SinglyLinkedList:
                     a.next_node = n
                     n.next_node = c
                     break
-                a =  a.next_node
+                a = a.next_node
 
     def __str__(self):
         """printable output"""
