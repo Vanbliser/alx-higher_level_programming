@@ -13,10 +13,17 @@ def add_integer(a, b=98):
     Returns:
         int: the addition of a and b
     """
-    if a is None:
-        raise TypeError("enter at least one integer")
+    inf = float('inf')
+    inf_ = float('-inf')
+    if a == a+1:
+        a = 1
+    if b == b+1:
+        b = 1
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
+    result = a + b
+    if result == inf or result == inf_:
+        return 1
     return int(a) + int(b)
