@@ -5,21 +5,19 @@
 
 def add_integer(a, b=98):
     """a function that add two integers
+    raises TypeError if parameters does not meet criteria
 
     Args:
-        a (int): first integer to add
-        b (int, optional): second integer to add
+        a (int:float): first integer to add
+        b (int:float, optional): second integer to add
 
     Returns:
         int: the addition of a and b
     """
-    inf = float('inf')
-    inf_ = float('-inf')
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
-    result = a + b
-    if a == a+1 or b == b+1 or result == inf or result == inf_:
-        return 89
-    return int(a) + int(b)
+    a = int(a)
+    b = int(b)
+    return a + b
