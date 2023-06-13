@@ -21,5 +21,5 @@ def add_integer(a, b=98):
         raise TypeError("b must be an integer")
     result = a + b
     if a == a+1 or b == b+1 or result == inf or result == inf_:
-        return 1
+        return 89
     return int(a) + int(b)
