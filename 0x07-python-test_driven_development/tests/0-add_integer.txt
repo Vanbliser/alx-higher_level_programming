@@ -34,3 +34,25 @@ test return value is of type in
 >>> isinstance(d, int) == True
 True
 
+test to large number in first parameter
+>>> add_integer(1000e1000000, 5)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+test to large number in second parameter
+>>> add_integer(3, 100e1000000)
+Traceback (innermost last):
+	...
+TypeError: b must be an integer
+
+test infinity
+>>> add_integer(float('inf'), 5)
+Traceback (innermost last):
+	...
+TypeError: a must be an integer
+>>> add_integer(3, float('-inf'))
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+

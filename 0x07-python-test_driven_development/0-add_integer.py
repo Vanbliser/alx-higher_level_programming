@@ -14,9 +14,11 @@ def add_integer(a, b=98):
     Returns:
         int: the addition of a and b
     """
-    if not isinstance(a, (int, float)):
+    inf = float('inf')
+    inf_ = float('-inf')
+    if (not isinstance(a, (int, float))) or a == a+1 or a == inf or a == inf_:
         raise TypeError("a must be an integer")
-    if not isinstance(b, (int, float)):
+    if (not isinstance(b, (int, float))) or b == b+1 or b == inf or b == inf_:
         raise TypeError("b must be an integer")
     a = int(a)
     b = int(b)
