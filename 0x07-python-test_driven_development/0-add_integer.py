@@ -15,15 +15,11 @@ def add_integer(a, b=98):
     """
     inf = float('inf')
     inf_ = float('-inf')
-    if a == a+1:
-        a = 1
-    if b == b+1:
-        b = 1
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
     result = a + b
-    if result == inf or result == inf_:
+    if a == a+1 or b == b+1 or result == inf or result == inf_:
         return 1
     return int(a) + int(b)
