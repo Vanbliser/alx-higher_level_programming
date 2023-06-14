@@ -3,7 +3,7 @@
 """Contains print_square(size) function"""
 
 
-def print_square(size):
+def print_square(size=None):
     """a function that prints a square with the character #.
 
     Args:
