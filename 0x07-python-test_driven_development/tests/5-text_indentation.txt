@@ -1,0 +1,25 @@
+IMPORT FUNCTION text_indentation(text):
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation(55)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+>>> text_indentation()
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+>>> text_indentation("Hello! What is your name? My name is Blossom. My hobbies are: reading, researching, watching soccer")
+Hello! What is your name?
+<BLANKLINE>
+My name is Blossom.
+<BLANKLINE>
+My hobbies are:
+<BLANKLINE>
+reading, researching, watching soccer
+
+>>> text_indentation("    Hello! I am a software engineer.    ")
+Hello! I am a software engineer.
+<BLANKLINE>
