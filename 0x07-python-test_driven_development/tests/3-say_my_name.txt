@@ -1,0 +1,59 @@
+import module to be tested
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+>>> str0 = ""
+>>> str1 = "   		"
+>>> str2 = "Vanbliser"
+>>> str3 = "\nVanbliser"
+>>> str4 = "\tVanbliser"
+>>> str5 = list()
+>>> str6 = 0 #doctest:
+
+TEST WRONG STRINGS
+>>> say_my_name(str0)
+Traceback (innermost last):
+	...
+TypeError: first_name must be a string
+
+>>> say_my_name(str1)
+Traceback (innermost last):
+	...
+TypeError: first_name must be a string
+
+>>> say_my_name(str5)
+Traceback (innermost last):
+	...
+TypeError: first_name must be a string
+
+>>> say_my_name(str6)
+Traceback (innermost last):
+	...
+TypeError: first_name must be a string
+
+>>> say_my_name(str6, str2)
+Traceback (innermost last):
+	...
+TypeError: first_name must be a string
+
+>>> say_my_name(str2)
+My name is Vanbliser 
+
+>>> say_my_name(str2, str0)
+My name is Vanbliser 
+
+>>> say_my_name(str2, str1)
+My name is Vanbliser 
+
+>>> say_my_name(str2, str5)
+Traceback (innermost last):
+	...
+TypeError: last_name must be a string
+
+>>> say_my_name(str2, str6)
+Traceback (innermost last):
+	...
+TypeError: last_name must be a string
+
+>>> say_my_name(str3, str4)
+My name is Vanbliser Vanbliser
