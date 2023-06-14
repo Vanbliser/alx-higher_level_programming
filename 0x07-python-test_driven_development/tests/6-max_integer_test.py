@@ -45,3 +45,4 @@ class TestFor_max_integer(unittest.TestCase):
         self.assertEqual(max_integer([1, 1, 2]), 2)
         self.assertEqual(max_integer([2, 2, 1]), 2)
         self.assertEqual(max_integer([3, 1, 1]), 3)
+        self.assertEqual(max_integer([3]), 3)
