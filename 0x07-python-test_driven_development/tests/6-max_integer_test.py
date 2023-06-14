@@ -23,6 +23,7 @@ class TestFor_max_integer(unittest.TestCase):
         #self.assertRaises(TypeError, max_integer, [1, '7', 5])
         #self.assertRaises(TypeError, max_integer, [1, None, 5])
         #self.assertRaises(TypeError, max_integer, [1, True, 5])
+        #self.assertRaises(TypeError, max_integer, [1, 100e1000000, 5])
 
     def test_correct_parameters(self):
         """test the the function behaves as intended for rigth parameters"""
@@ -31,3 +32,14 @@ class TestFor_max_integer(unittest.TestCase):
         self.assertEqual(max_integer([1,1,1]), 1)
         self.assertEqual(max_integer([0,0,0]), 0)
         self.assertEqual(max_integer([1,2,3]), 3)
+        self.assertEqual(max_integer([4,2,3]), 4)
+        self.assertEqual(max_integer([1,3,1]), 3)
+        self.assertEqual(max_integer([1,4,3]), 4)
+        self.assertEqual(max_integer([-1,-2,-3]), -1)
+        self.assertEqual(max_integer([1,-2,3]), 3)
+        self.assertEqual(max_integer([1,2,-3]), 2)
+        self.assertEqual(max_integer([-3,-1,-2]), -1)
+        self.assertEqual(max_integer([-5,-4,-3]), -3)
+        self.assertEqual(max_integer([1,1,2]), 2)
+        self.assertEqual(max_integer([2,2,1]), 2)
+        self.assertEqual(max_integer([3,1,1]), 3)
