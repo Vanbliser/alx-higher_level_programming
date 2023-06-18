@@ -51,7 +51,10 @@ True
 >>> print_sorted([-1, -2, -3])
 [-3, -2, -1]
 
->>> chk = print_sorted([1, 2, 3])
+>>> mylist = MyList([1, 3, 2])
+>>> chk = print_sorted(mylist)
 [1, 2, 3]
+>>> mylist is not chk
+True
 >>> chk is None
 True
