@@ -1,5 +1,23 @@
 IMPORT THE MODULE
 >>> print_sorted = __import__("1-my_list").MyList.print_sorted
+>>> MyList = __import__("1-my_list").MyList
+
+>>> myList = MyList()
+>>> isinstance(myList, MyList)
+True
+>>> isinstance(myList, list)
+True
+
+>>> myList = [1, 5, 3]
+>>> print(myList)
+[1, 5, 3]
+
+>>> myList.append(6)
+>>> print(myList)
+[1, 5, 3, 6]
+
+>>> print_sorted([])
+[]
 
 >>> print_sorted([5, 4, 3, 2, 1])
 [1, 2, 3, 4, 5]
@@ -24,3 +42,8 @@ IMPORT THE MODULE
 
 >>> print_sorted([0, 1, 1])
 [0, 1, 1]
+
+>>> print_sorted([-1, -2, -3])
+[-3, -2, -1]
+
+
