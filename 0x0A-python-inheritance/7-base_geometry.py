@@ -19,5 +19,7 @@ class BaseGeometry:
         """
         if not (isinstance(value, int) and issubclass(int, type(value))):
             raise TypeError(f"{name} must be an integer")
+        if value == value+1:
+            raise TypeError(f"{name} must be an integer")
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
