@@ -12,6 +12,10 @@ True
 >>> print(myList)
 [1, 5, 3]
 
+>>> myList = [1, 5, 3]
+>>> print(str(myList))
+[1, 5, 3]
+
 >>> myList.append(6)
 >>> print(myList)
 [1, 5, 3, 6]
