@@ -23,4 +23,3 @@ class Test(unittest.TestCase):
         self.assertEqual(r.height, 3)
         self.assertEqual(r.x, 2)
         self.assertEqual(r.y, 1)
-
