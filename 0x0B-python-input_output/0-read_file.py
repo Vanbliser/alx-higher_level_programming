@@ -1,4 +1,4 @@
-#!/usr/bun/python3
+#!/usr/bin/python3
 """Contains def read_file(filename="") function"""
 
 
