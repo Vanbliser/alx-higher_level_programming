@@ -30,5 +30,3 @@ class Student:
             else:
                 instance_attr = tmp_dict
         return instance_attr
-
-
