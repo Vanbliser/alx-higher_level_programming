@@ -34,3 +34,10 @@ class Square(Rectangle):
             args = list(args)
             args.insert(2, args[1])
         super().update(*args, **kwargs)
+
+    def to_dictionary(self):
+        """returns the dictionary representation of square"""
+        return {"id": self.id,
+                "size": self.width,
+                "x": self.x,
+                "y": self.y}
