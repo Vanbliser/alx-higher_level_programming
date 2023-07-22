@@ -85,7 +85,7 @@ class Rectangle(Base):
         for y in range(self.__y):
             print()
         for i in range(self.__height):
-            print(self.__x*" " ,self.width*"#", sep="")
+            print(self.__x*" ", self.width*"#", sep="")
 
     def __str__(self):
         """string representation"""
@@ -96,4 +96,3 @@ class Rectangle(Base):
         e = self.__width
         f = self.__height
         return f"[{a}] ({b}) {c}/{d} - {e}/{f}"
-
