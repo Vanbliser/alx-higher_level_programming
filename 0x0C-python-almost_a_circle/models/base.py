@@ -30,6 +30,8 @@ class Base:
         """static method that returns the list of the JSON string
         representation
         """
+        if json_string is None or json_string == "":
+            return []
         from json import loads
         return loads(json_string)
 
