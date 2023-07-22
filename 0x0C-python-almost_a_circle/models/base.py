@@ -34,7 +34,6 @@ class Base:
             with open("Base.json", "w") as f:
                 f.write(Base.to_json_string(None))
         elif len(list_objs) > 0:
-            name = list_objs[0].__class__.__name__
-            with open(f"{name}.json", "w") as f:
+            with open(f"{cls.__name__}.json", "w") as f:
                 list_of_dict = [obj.to_dictionary() for obj in list_objs]
                 f.write(Base.to_json_string(list_of_dict))
