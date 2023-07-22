@@ -96,3 +96,10 @@ class Rectangle(Base):
         e = self.__width
         f = self.__height
         return f"[{a}] ({b}) {c}/{d} - {e}/{f}"
+
+    def update(self, *args):
+        """method that assigns arguments to each attribute"""
+        values = [self.id, self.__width, self.__height, self.__x, self.__y]
+        for index, arg in enumerate(args):
+            values[index] = arg
+        self.id, self.width, self.height, self.x, self.y = values
