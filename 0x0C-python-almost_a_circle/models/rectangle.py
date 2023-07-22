@@ -78,23 +78,23 @@ class Rectangle(Base):
 
     def area(self):
         """method that returns the area of this rectangle"""
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         """print in stdout the rectangle instance with #"""
-        for y in range(self.__y):
+        for y in range(self.y):
             print()
-        for i in range(self.__height):
-            print(self.__x*" ", self.width*"#", sep="")
+        for i in range(self.height):
+            print(self.x*" ", self.width*"#", sep="")
 
     def __str__(self):
         """string representation"""
         a = self.__class__.__name__
         b = self.id
-        c = self.__x
-        d = self.__y
-        e = self.__width
-        f = self.__height
+        c = self.x
+        d = self.y
+        e = self.width
+        f = self.height
         return f"[{a}] ({b}) {c}/{d} - {e}/{f}"
 
     def update(self, *args, **kwargs):
@@ -102,7 +102,7 @@ class Rectangle(Base):
         if len(args) < 0 and len(kwargs) < 0:
             pass
         else:
-            vals = [self.id, self.__width, self.__height, self.__x, self.__y]
+            vals = [self.id, self.width, self.height, self.x, self.y]
             keys = {"id": 0, "width": 1, "height": 2, "x": 3, "y": 4}
             if len(args) > 0:
                 for index, arg in enumerate(args):
