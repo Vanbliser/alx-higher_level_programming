@@ -109,5 +109,14 @@ class Rectangle(Base):
                     vals[index] = arg
             else:
                 for key, value in kwargs.items():
-                    vals[keys[key]] = value
+                    if key in keys.keys():
+                        vals[keys[key]] = value
             self.id, self.width, self.height, self.x, self.y = vals
+
+    def to_dictionary(self):
+        """returns the dictionary representation of Rectangle"""
+        return {'id': self.id,
+                'width': self.width,
+                'height': self.height,
+                'x': self.x,
+                'y': self.y}
