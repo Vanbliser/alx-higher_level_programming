@@ -46,3 +46,16 @@ class Base:
             else:
                 list_of_dict = [obj.to_dictionary() for obj in list_objs]
                 f.write(Base.to_json_string(list_of_dict))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """class method that returns an instance with all attribute set"""
+        if cls.__name__ == "Square":
+            args = [1]
+        elif cls.__name__ == "Rectangle":
+            args = [1, 1]
+        else:
+            raise TypeError("Unsupported Type")
+        obj = cls(*args)
+        obj.update(**dictionary)
+        return obj
