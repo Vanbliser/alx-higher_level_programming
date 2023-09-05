@@ -13,7 +13,7 @@ def find_peak(list_of_integers):
         return list_of_integers[0]
     if length == 3:
         if (list_of_integers[1] > list_of_integers[0]
-            and list_of_integers[1] > list_of_integers[2]):
+                and list_of_integers[1] > list_of_integers[2]):
             return list_of_integers[1]
         if (list_of_integers[0] >= list_of_integers[2]):
             return list_of_integers[0]
